@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <header class="bg-blue-500 text-white py-4">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-bold">My Portfolio</h1>
+            <p class="text-lg">Welcome to my portfolio!</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-8">
+        <!-- Your content goes here -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">About Me</h2>
+            <p>"I'm a Computer Science student at Duet, venturing into the inaugural semester of my academic journey.
+                Driven by a profound interest in software development, I am fervently exploring the realm of coding,
+                seeking to meld theoretical knowledge with practical innovation. Eager to unravel the intricacies of
+                programming and its transformative potential in shaping the future"</p>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Projects</h2>
+            <!-- Example project card -->
+            <div class="bg-white rounded-lg p-4 shadow-md">
+                <h3 class="text-lg font-semibold mb-2">Project 1</h3>
+                <div class="project-card">
+                    <h3>Islamic Daily Routine Utility</h3>
+                    <p>
+                        The "Islamic Daily Routine Utility" is an initial framework designed in C++ to aid in managing daily activities
+                        in accordance with Islamic principles. Although it's not a fully-fledged application, this code demonstrates
+                        the foundation for a comprehensive solution aimed at integrating essential aspects of a daily routine with
+                        Islamic practices.
+                    </p>
+                    <p>
+                        This project showcases core functionalities such as retrieving prayer timings based on the user's location,
+                        offering health tips tailored to individual preferences, suggesting workout routines, and providing Islamic
+                        reminders. While it currently utilizes predefined data and lacks dynamic interactions, it sets the groundwork
+                        for future expansion and integration with external services.
+                    </p>
+                    <p>
+                        Leveraging C++, the code exhibits proficiency in basic logic and structure required for handling user inputs,
+                        processing data, and displaying essential information. The use of functions simulates functionalities that
+                        could be further developed and integrated into a complete software solution.
+                    </p>
+                    <!-- You can add more information or a GitHub link here -->
+                </div>
+                
+            <!-- More project cards can be added -->
+        </section>
+        <div class="project-card">
+            <h3>Islamic Daily Routine App</h3>
+            <p>A C++ project that retrieves prayer timings, health tips, workout suggestions, and Islamic reminders.</p>
+            <pre><code class="language-cpp">
+                #include <iostream>
+                #include <vector>
+                // ... (#include <iostream>
+                    #include <vector>
+                    #include <string>
+                    
+                    // Function to retrieve prayer timings based on user's location
+                    std::vector<std::string> retrievePrayerTimings(std::string userLocation) {
+                        // Code to fetch accurate prayer timings based on location
+                        // This function should interact with a service or API to retrieve timings
+                        std::vector<std::string> prayerTimings = {"Fajr: 5:30 AM", "Dhuhr: 1:00 PM", "Asr: 4:30 PM", "Maghrib: 6:00 PM", "Isha: 8:00 PM"};
+                        return prayerTimings;
+                    }
+                    
+                    // Function to generate health tips based on user's preferences
+                    std::vector<std::string> generateHealthTips(std::string userPreferences) {
+                        // Code to select health tips based on user preferences from a database
+                        std::vector<std::string> healthTips = {"Take a walk daily for 30 minutes.", "Stay hydrated throughout the day.", "Eat a balanced diet."};
+                        return healthTips;
+                    }
+                    
+                    // Function to generate workout suggestions based on user preferences
+                    std::vector<std::string> generateWorkoutSuggestions(std::string userPreferences) {
+                        // Code to select workout suggestions based on user preferences from a database
+                        std::vector<std::string> workoutSuggestions = {"Try yoga for relaxation and flexibility.", "Do a 20-minute HIIT workout for a quick session.", "Go for a jog or run in the park."};
+                        return workoutSuggestions;
+                    }
+                    
+                    // Function to select daily Islamic reminders
+                    std::vector<std::string> selectIslamicReminders() {
+                        // Code to fetch daily Islamic reminders from a curated database
+                        std::vector<std::string> islamicReminders = {"Remember to recite Surah Al-Kahf on Fridays.", "Send peace and blessings upon Prophet Muhammad (PBUH) daily.", "Practice gratitude in your daily prayers."};
+                        return islamicReminders;
+                    }
+                    
+                    // Function to display information to the user
+                    void displayInformation(std::vector<std::string> prayerTimings, std::vector<std::string> healthTips, std::vector<std::string> workoutSuggestions, std::vector<std::string> islamicReminders) {
+                        // Display prayer timings
+                        std::cout << "Today's Prayer Timings:\n";
+                        for (const auto& timing : prayerTimings) {
+                            std::cout << timing << std::endl;
+                        }
+                    
+                        // Display health tips
+                        std::cout << "\nYour Daily Health Tip:\n";
+                        for (const auto& tip : healthTips) {
+                            std::cout << tip << std::endl;
+                        }
+                    
+                        // Display workout suggestions
+                        std::cout << "\nToday's Workout Suggestions:\n";
+                        for (const auto& suggestion : workoutSuggestions) {
+                            std::cout << suggestion << std::endl;
+                        }
+                    
+                        // Display Islamic reminders
+                        std::cout << "\nIslamic Reminder for Today:\n";
+                        for (const auto& reminder : islamicReminders) {
+                            std::cout << reminder << std::endl;
+                        }
+                    }
+                    
+                    // Function to send notifications
+                    void sendNotifications(bool markedReminder) {
+                        // Send reminders and notifications based on user interactions
+                        if (markedReminder) {
+                            std::cout << "Reminder: Don't forget to read today's Islamic reminder!\n";
+                        }
+                    }
+                    
+                    // Function to collect user feedback
+                    void collectFeedback() {
+                        // Code to prompt user for feedback and store it in a database
+                        std::string feedback;
+                        std::cout << "Please provide your feedback: ";
+                        std::getline(std::cin, feedback);
+                        // Store the feedback in a database or file
+                        std::cout << "Thank you for your feedback!\n";
+                    }
+                    
+                    int main() {
+                        // Get user's location, preferences, and interactions
+                        std::string userLocation, userPreferences;
+                        bool markedReminder = false;
+                    
+                        std::cout << "Enter your location: ";
+                        std::getline(std::cin, userLocation);
+                    
+                        std::cout << "Enter your health preferences: ";
+                        std::getline(std::cin, userPreferences);
+                    
+                        // Retrieve prayer timings, health tips, workout suggestions, and Islamic reminders
+                        std::vector<std::string> prayerTimings = retrievePrayerTimings(userLocation);
+                        std::vector<std::string> healthTips = generateHealthTips(userPreferences);
+                        std::vector<std::string> workoutSuggestions = generateWorkoutSuggestions(userPreferences);
+                        std::vector<std::string> islamicReminders = selectIslamicReminders();
+                    
+                        // Display information to the user
+                        displayInformation(prayerTimings, healthTips, workoutSuggestions, islamicReminders);
+                    
+                        // Send notifications based on user interactions
+                        sendNotifications(markedReminder);
+                    
+                        // Collect user feedback
+                        collectFeedback();
+                    
+                        return 0;
+                    })
+            </code></pre>
+        </div>
+        
+        
+
+        <section>
+            <h2 class="text-2xl font-bold mb-4">Contact</h2>
+            <p>Email: mahnoormalik4220@gmail.com</p>
+        </section>
+    </main>
+
+    <footer class="bg-black-500 text-white text-center py-4">
+        <p>&copy; 2023 My Portfolio</p>
+    </footer>
+
+    <!-- Your JavaScript can be added here -->
+    <script>
+        <script src="script.js"></script>
+
+        console.log('Portfolio loaded');
+    </script>
+
+</body>
+
+</html>
